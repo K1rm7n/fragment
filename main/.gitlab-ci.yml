@@ -1,0 +1,10 @@
+image: podolchak/gitlab-deployer
+stages:
+  - deploy
+deploy to staging:
+  stage: deploy
+  environment: staging
+  only:
+    - main
+  script:
+    - git-push dokku@194.44.203.134:fragment
